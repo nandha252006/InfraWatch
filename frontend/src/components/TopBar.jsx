@@ -17,12 +17,15 @@ function TopBar() {
   }
 
   return (
-    <header className="glass-strong border-b border-infra-border/50 px-8 py-5 flex items-center justify-between sticky top-0 z-30 backdrop-blur-xl">
+    <header className="glass-strong border-b border-infra-border/50 px-8 py-2 flex items-center justify-between sticky top-0 z-30 backdrop-blur-xl">
       {/* Global Search */}
       <div className="flex-1 max-w-2xl">
         <div className="relative group">
-          <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white transition-colors" size={20} />
-          <input
+        <Search 
+  className="absolute left-4 top-1/2 transform -translate-y-1/2 stroke-white transition-colors" 
+  size={20} 
+/>
+        <input
             type="text"
             placeholder="Search servers, services, alerts..."
             value={searchQuery}

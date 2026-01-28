@@ -25,23 +25,6 @@ function Dashboard() {
   return (
     <div className="space-y-8 animate-fadeIn">
       {/* Page Header */}
-      <div className="flex items-center justify-between">
-        <div className="flex items-center space-x-5">
-          <div className="p-4 bg-gradient-to-br from-primary-500/30 to-primary-600/20 rounded-2xl border border-primary-500/40 shadow-lg shadow-primary-500/20 hover:scale-105 transition-transform">
-            <BarChart3 size={32} className="text-primary-300" />
-          </div>
-          <div>
-            <h1 className="font-heading font-bold text-4xl text-white mb-3 flex items-center space-x-3">
-              <span className="bg-gradient-to-r from-white to-infra-muted bg-clip-text text-transparent">Live Dashboard</span>
-              <div className="flex items-center space-x-2 px-3 py-1.5 bg-success/20 border border-success/40 rounded-xl backdrop-blur-sm shadow-lg shadow-success/20">
-                <div className="w-2.5 h-2.5 bg-success rounded-full animate-pulse shadow-lg shadow-success" />
-                <span className="text-xs font-bold text-success uppercase tracking-wider">LIVE</span>
-              </div>
-            </h1>
-            <p className="text-infra-muted text-lg">Real-time infrastructure monitoring overview</p>
-          </div>
-        </div>
-      </div>
 
       {/* Metric Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

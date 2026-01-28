@@ -31,7 +31,7 @@ function Settings() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-4">
-          <div className="p-3 bg-gradient-to-br from-yellow-500/20 to-yellow-600/10 rounded-xl border border-yellow-500/30">
+          <div className="p-3">
             <SettingsIcon size={28} className="text-yellow-400" />
           </div>
           <div>
@@ -53,7 +53,7 @@ function Settings() {
       </div>
 
       {/* Polling Settings */}
-      <div className="glass rounded-xl p-6 border border-infra-border bg-gradient-to-br from-blue-500/10 to-blue-600/5">
+      <div className="rounded-xl p-6 border border-infra-border">
         <h3 className="font-medium text-white mb-4 flex items-center space-x-2">
           <div className="p-2 bg-blue-500/20 rounded-lg">
             <RefreshCw size={20} className="text-blue-400" />
@@ -81,7 +81,7 @@ function Settings() {
       </div>
 
       {/* Alert Thresholds */}
-      <div className="glass rounded-xl p-6 border border-infra-border bg-gradient-to-br from-critical/20 to-red-600/10">
+      <div className="glass rounded-xl p-6 border border-infra-border ">
         <h3 className="font-medium text-white mb-4 flex items-center space-x-2">
           <div className="p-2 bg-critical/20 rounded-lg">
             <Bell size={20} className="text-critical" />
@@ -141,7 +141,7 @@ function Settings() {
       </div>
 
       {/* Data Retention */}
-      <div className="glass rounded-xl p-6 border border-infra-border bg-gradient-to-br from-purple-500/10 to-purple-600/5">
+      <div className="glass rounded-xl p-6 border border-infra-border">
         <h3 className="font-medium text-white mb-4 flex items-center space-x-2">
           <div className="p-2 bg-purple-500/20 rounded-lg">
             <Database size={20} className="text-purple-400" />
@@ -167,7 +167,7 @@ function Settings() {
       </div>
 
       {/* Notification Channels */}
-      <div className="glass rounded-xl p-6 border border-infra-border bg-gradient-to-br from-orange-500/10 to-orange-600/5">
+      <div className="glass rounded-xl p-6 border border-infra-border">
         <h3 className="font-medium text-white mb-4 flex items-center space-x-2">
           <div className="p-2 bg-orange-500/20 rounded-lg">
             <Bell size={20} className="text-orange-400" />
@@ -178,22 +178,24 @@ function Settings() {
           {Object.entries(settings.notifications).map(([channel, enabled]) => (
             <label key={channel} className="flex items-center justify-between p-3 bg-infra-bg rounded-lg">
               <span className="text-white capitalize">{channel}</span>
-              <input
-                type="checkbox"
-                checked={enabled}
-                onChange={(e) => setSettings({
-                  ...settings,
-                  notifications: { ...settings.notifications, [channel]: e.target.checked }
-                })}
-                className="w-5 h-5 rounded border-infra-border"
-              />
+            <input
+  type="checkbox"
+  checked={enabled}
+  onChange={(e) =>
+    setSettings({
+      ...settings,
+      notifications: { ...settings.notifications, [channel]: e.target.checked }
+    })
+  }
+  className="w-5 h-5 rounded border border-infra-border bg-infra-bg checked:bg-orange-400 checked:border-orange-400 appearance-none cursor-pointer"
+/>
             </label>
           ))}
         </div>
       </div>
 
       {/* Theme Settings */}
-      <div className="glass rounded-xl p-6 border border-infra-border bg-gradient-to-br from-pink-500/10 to-pink-600/5">
+      <div className="glass rounded-xl p-6 border border-infra-border">
         <h3 className="font-medium text-white mb-4 flex items-center space-x-2">
           <div className="p-2 bg-pink-500/20 rounded-lg">
             <Palette size={20} className="text-pink-400" />
